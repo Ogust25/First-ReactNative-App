@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native-web'
 import { useEffect } from 'react'
-import homeStyle from '../assets/styles/homeStyle'
+import HomeStyle from '../assets/styles/HomeStyle'
 import { getData } from '../utils/localStorage'
+import { Card } from '../components/Card'
 
 export const Home = ({ navigation }) => {
   useEffect(() => {
@@ -13,8 +14,11 @@ export const Home = ({ navigation }) => {
   })
 
   return (
-    <View style={homeStyle.container}>
-      <Text style={homeStyle.title}>Home</Text>
+    <View style={HomeStyle.body}>
+      <Text style={HomeStyle.title}>Home</Text>
+      <View style={HomeStyle.container}>
+        <Card />
+      </View>
     </View>
   )
 }

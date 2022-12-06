@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 
-import loginStyle from '../assets/styles/loginStyle'
+import LoginStyle from '../assets/styles/LoginStyle'
 import { storeData, getData } from '../utils/localStorage'
 import { checkEmail, checkPassword } from '../utils/regex'
 
@@ -32,28 +32,28 @@ const Login = ({ navigation }) => {
   }
 
   return (
-    <View style={loginStyle.body}>
-      <View style={loginStyle.container}>
-        <Text style={loginStyle.title}>Login</Text>
+    <View style={LoginStyle.body}>
+      <View style={LoginStyle.container}>
+        <Text style={LoginStyle.title}>Login</Text>
         <TextInput
-          style={loginStyle.input}
+          style={LoginStyle.input}
           placeholder="Email"
           onChangeText={setEmail}
           value={email}
         />
         <TextInput
-          style={loginStyle.input}
+          style={LoginStyle.input}
           placeholder="Password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
-        <TouchableOpacity style={loginStyle.btn} onPress={handleLogin}>
-          <Text style={loginStyle.textBtn}>Login</Text>
+        <TouchableOpacity style={LoginStyle.btn} onPress={handleLogin}>
+          <Text style={LoginStyle.textBtn}>Login</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={loginStyle.btnRegister} onPress={goRegister}>
-          <Text style={loginStyle.textBtn}>
+        <TouchableOpacity style={LoginStyle.btnRegister} onPress={goRegister}>
+          <Text style={LoginStyle.textBtn}>
             Don't have an acount ? Register
           </Text>
         </TouchableOpacity>

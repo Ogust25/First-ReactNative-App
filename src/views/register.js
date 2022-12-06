@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 
-import registerStyle from '../assets/styles/registerStyle'
+import RegisterStyle from '../assets/styles/RegisterStyle'
 import { checkEmail, checkPassword } from '../utils/regex'
 
 const Register = ({ navigation }) => {
@@ -34,36 +34,36 @@ const Register = ({ navigation }) => {
   }
 
   return (
-    <View style={registerStyle.body}>
-      <View style={registerStyle.container}>
-        <Text style={registerStyle.title}>Register</Text>
+    <View style={RegisterStyle.body}>
+      <View style={RegisterStyle.container}>
+        <Text style={RegisterStyle.title}>Register</Text>
 
         <TextInput
-          style={registerStyle.input}
+          style={RegisterStyle.input}
           placeholder="Email"
           onChangeText={setEmail}
           value={email}
         />
         <TextInput
-          style={registerStyle.input}
+          style={RegisterStyle.input}
           placeholder="Password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
         <TextInput
-          style={registerStyle.input}
+          style={RegisterStyle.input}
           placeholder="Confirm Password"
           value={confirmPassword}
           onChangeText={setConfirmPassword}
           secureTextEntry
         />
-        <TouchableOpacity style={registerStyle.btn} onPress={handleRegister}>
-          <Text style={registerStyle.textBtn}>Register</Text>
+        <TouchableOpacity style={RegisterStyle.btn} onPress={handleRegister}>
+          <Text style={RegisterStyle.textBtn}>Register</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={registerStyle.btnLogin} onPress={goLogin}>
-          <Text style={registerStyle.textBtn}>Have an acount ? Login</Text>
+        <TouchableOpacity style={RegisterStyle.btnLogin} onPress={goLogin}>
+          <Text style={RegisterStyle.textBtn}>Have an acount ? Login</Text>
         </TouchableOpacity>
       </View>
     </View>
