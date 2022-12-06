@@ -14,10 +14,11 @@ const CardStyle = StyleSheet.create({
     },
     shadowOpacity: 0.15,
     shadowRadius: 7,
+    marginBottom: 20,
   },
   img: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
     borderRadius: '100%',
   },
 })
