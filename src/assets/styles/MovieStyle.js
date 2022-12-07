@@ -46,6 +46,12 @@ const movieStyle = StyleSheet.create({
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',
   },
+  center: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  }
 })
 
 export default movieStyle

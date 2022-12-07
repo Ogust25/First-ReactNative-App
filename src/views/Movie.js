@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native-web'
+import { View, Text, TouchableOpacity, TextInput } from 'react-native-web'
 import { useEffect, useState } from 'react'
 import { getData } from '../utils/localStorage'
 import MovieStyle from '../assets/styles/MovieStyle'
@@ -12,11 +6,12 @@ import { Card } from '../components/Card'
 import { fetchMovies } from '../services/movie'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
-
+import { Loader } from '../components/loader'
 
 export const Movie = ({ navigation }) => {
   const [research, setResearch] = useState('')
   const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const token = getData('isConnected').then((res) => {
@@ -32,8 +27,10 @@ export const Movie = ({ navigation }) => {
   }
 
   function getMovies() {
+    setLoading(true)
     fetchMovies(research).then((res) => {
       setMovies(res.Search)
+      setLoading(false)
     })
   }
 
@@ -57,18 +54,22 @@ export const Movie = ({ navigation }) => {
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </TouchableOpacity>
       </View>
-      <View style={MovieStyle.container}>
-        {movies &&
-          movies.map((movie) => {
-            return (
-              <Card
-                key={movie.imdbID}
-                title={movie.Title}
-                image={movie.Poster}
-              />
-            )
-          })}
-      </View>
+      {!loading ? (
+        <View style={MovieStyle.container}>
+          {movies &&
+            movies.map((movie) => {
+              return (
+                <Card
+                  key={movie.imdbID}
+                  title={movie.Title}
+                  image={movie.Poster}
+                />
+              )
+            })}
+        </View>
+      ) : (
+        <Loader />
+      )}
     </View>
   )
 }
