@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Login from './src/views/login'
 import Register from './src/views/register'
 import { Home } from './src/views/home'
+import { Movie } from './src/views/Movie'
 
 const Stack = createNativeStackNavigator()
 
@@ -29,6 +30,13 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Movie"
+          component={Movie}
           options={{
             headerShown: false,
           }}

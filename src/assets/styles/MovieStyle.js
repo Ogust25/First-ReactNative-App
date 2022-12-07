@@ -1,13 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-const homeStyle = StyleSheet.create({
+const movieStyle = StyleSheet.create({
   body: {
     padding: 20,
-  },
-  btn: {
-    padding: 5,
-    borderWidth: 1,
-    borderRadius: 25,
   },
   boxTitle: {
     display: 'flex',
@@ -27,6 +22,24 @@ const homeStyle = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10,
   },
+  inputSearch: {
+    fontSize: 18,
+    borderColor: '#bdbdbd',
+    borderWidth: 2,
+    borderRadius: 10,
+    marginBottom: 10,
+    padding: 10,
+    backgroundColor: 'white',
+  },
+  btnSearch: {
+    fontSize: 18,
+    borderColor: '#bdbdbd',
+    borderWidth: 2,
+    borderRadius: 10,
+    marginBottom: 10,
+    padding: 14,
+    backgroundColor: 'white',
+  },
   container: {
     display: 'flex',
     flexDirection: 'row',
@@ -35,4 +48,4 @@ const homeStyle = StyleSheet.create({
   },
 })
 
-export default homeStyle
+export default movieStyle

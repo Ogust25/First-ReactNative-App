@@ -4,23 +4,25 @@ const CardStyle = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
-    padding: 10,
+    marginBottom: 15,
     borderColor: 'transparent',
     borderWidth: 1,
-    borderRadius: 20,
+    borderRadius: 5,
     shadowOffset: {
       width: 0,
       height: 5,
     },
     shadowOpacity: 0.15,
     shadowRadius: 7,
-    marginBottom: 20,
   },
   img: {
-    width: 120,
-    height: 120,
-    borderRadius: '100%',
+    width: 150,
+    height: 170,
+    borderRadius: 5,
   },
+  text: {
+    padding: 5,
+  }
 })
 
 export default CardStyle

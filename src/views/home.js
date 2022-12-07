@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native-web'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native-web'
 import { useEffect, useState } from 'react'
 import HomeStyle from '../assets/styles/HomeStyle'
 import { getData } from '../utils/localStorage'
@@ -14,7 +14,7 @@ export const Home = ({ navigation }) => {
     const token = getData('isConnected').then((res) => {
       if (res && res === 'false') {
         navigation.navigate('Login')
-        console.log(res);
+        console.log(res)
       }
     })
   }, [])
@@ -24,15 +24,25 @@ export const Home = ({ navigation }) => {
     })
   }, [])
 
+  function goMovie() {
+    navigation.navigate('Movie')
+  }
+
   return (
     <View style={HomeStyle.body}>
-      <Text style={HomeStyle.title}>Home</Text>
-      <ScrollView style={HomeStyle.container}>
+      <View style={HomeStyle.boxTitle}>
+        <TouchableOpacity onPress={goMovie}>
+          <Text style={HomeStyle.linkTitle}>MOVIE</Text>
+        </TouchableOpacity>
+        <Text style={HomeStyle.title}>HOME</Text>
+        <Text style={HomeStyle.linkTitle}>WIP</Text>
+      </View>
+      <View style={HomeStyle.container}>
         {users &&
           users.map((user) => {
-            return <Card key={user.id} title={user.title} image={monkey} />
+            return <Card key={user.id} title={user.username} image={monkey} />
           })}
-      </ScrollView>
+      </View>
     </View>
   )
 }

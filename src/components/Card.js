@@ -5,7 +5,7 @@ export const Card = (props) => {
   return (
     <View style={CardStyle.container}>
       <Image source={props.image} style={CardStyle.img}></Image>
-      <Text>{props.title}</Text>
+      <Text style={CardStyle.text}>{props.title}</Text>
     </View>
   )
 }
