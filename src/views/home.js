@@ -10,6 +10,7 @@ import monkey from '../assets/images/monkey.jpg'
 export const Home = ({ navigation }) => {
   const [users, setUsers] = useState()
 
+  // Redirige si connecté
   useEffect(() => {
     const token = getData('isConnected').then((res) => {
       if (res && res === 'false') {
@@ -18,12 +19,15 @@ export const Home = ({ navigation }) => {
       }
     })
   }, [])
+
+  // Fetch les utilisateurs
   useEffect(() => {
     getUsers().then((res) => {
       setUsers(res)
     })
   }, [])
 
+  // Va a la page movie
   function goMovie() {
     navigation.navigate('Movie')
   }

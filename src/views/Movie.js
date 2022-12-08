@@ -54,7 +54,9 @@ export const Movie = ({ navigation }) => {
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </TouchableOpacity>
       </View>
-      {!loading ? (
+      {loading ? (
+        <Loader />
+      ) : (
         <View style={MovieStyle.container}>
           {movies &&
             movies.map((movie) => {
@@ -67,8 +69,6 @@ export const Movie = ({ navigation }) => {
               )
             })}
         </View>
-      ) : (
-        <Loader />
       )}
     </View>
   )
